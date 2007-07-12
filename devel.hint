@@ -1,0 +1,6 @@
+category: Shells
+requires: cygwin gettext libncurses-devel
+external-source: dialog
+sdesc: "Curses widgets script interpreter (development)"
+ldesc: "A script-interpreter which provides a set of curses widgets. 
+Widgets are objects whose appearance and behavior can be customized."
