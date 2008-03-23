@@ -4,16 +4,15 @@ A script-interpreter which provides a set of curses widgets. Widgets are
 objects whose appearance and behavior can be customized.
 
 Runtime requirements:
-  cygwin-1.5.24-2
+  cygwin-1.5.25-7
   libintl8-0.15-1
   libncurses8-5.5-3
 
 Build requirements:
 (besides corresponding -devel packages)
-  cygwin-1.5.24-2
   binutils-20060817-1
-  cygport-0.3.7-1
-  gawk-3.1.5-4
+  cygport-0.3.8-1
+  gawk-3.1.6-1
   gcc-core-3.4.4-3
   gettext-devel-0.15-1
   libtool1.5-1.5.23a-2
@@ -29,17 +28,17 @@ Canonical download:
 -------------------------------------------
 
 Build instructions:
-  unpack dialog-1.1.20071028-X-src.tar.bz2
+  unpack dialog-1.1.20080316-X-src.tar.bz2
     if you use setup to install this src package, it will be
 	 unpacked under /usr/src automatically
   cd /usr/src
-  cygport ./dialog-1.1.20071028-X.cygport all
+  cygport ./dialog-1.1.20080316-X.cygport all
 
 This will create:
-  /usr/src/dialog-1.1.20071028-X-src.tar.bz2
-  /usr/src/dialog-1.1.20071028-X.tar.bz2
-  /usr/src/libdialog-devel-1.1.20071028-X.tar.bz2
-  /usr/src/libdialog6-1.1.20071028-X.tar.bz2
+  /usr/src/dialog-1.1.20080316-X-src.tar.bz2
+  /usr/src/dialog-1.1.20080316-X.tar.bz2
+  /usr/src/libdialog-devel-1.1.20080316-X.tar.bz2
+  /usr/src/libdialog6-1.1.20080316-X.tar.bz2
 
 -------------------------------------------
 
@@ -47,10 +46,10 @@ Files included in the binary packages:
 
 (dialog)
   /usr/bin/dialog.exe
-  /usr/share/doc/Cygwin/dialog-1.1.20071028.README
-  /usr/share/doc/dialog-1.1.20071028/COPYING
-  /usr/share/doc/dialog-1.1.20071028/Changes
-  /usr/share/doc/dialog-1.1.20071028/README
+  /usr/share/doc/Cygwin/dialog-1.1.20080316.README
+  /usr/share/doc/dialog-1.1.20080316/COPYING
+  /usr/share/doc/dialog-1.1.20080316/Changes
+  /usr/share/doc/dialog-1.1.20080316/README
   /usr/share/locale/ar/LC_MESSAGES/dialog.mo
   /usr/share/locale/bg/LC_MESSAGES/dialog.mo
   /usr/share/locale/ca/LC_MESSAGES/dialog.mo
@@ -109,6 +108,9 @@ Files included in the binary packages:
 ------------------
 
 Port Notes:
+
+----- version 1.1.20080316-1 -----
+Version bump.
 
 ----- version 1.1.20071028-1 -----
 Version bump.

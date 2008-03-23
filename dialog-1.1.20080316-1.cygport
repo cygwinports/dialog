@@ -1,0 +1,18 @@
+DESCRIPTION="Curses widget-based script interpreter"
+HOMEPAGE="http://invisible-island.net/dialog/"
+SRC_URI="ftp://invisible-island.net/dialog/${PN}-${PVP[0]}.${PVP[1]}-${PVP[2]}.tgz"
+SRC_DIR="${PN}-${PVP[0]}.${PVP[1]}-${PVP[2]}"
+
+abi=6
+PKG_NAMES="${PN} lib${PN}${abi} lib${PN}-devel"
+PKG_HINTS="setup lib devel"
+PKG_CONTENTS[0]="--exclude=man3 usr/bin/*.exe usr/share/"
+PKG_CONTENTS[1]="usr/bin/cyg${PN}-${abi}.dll"
+PKG_CONTENTS[2]="usr/bin/${PN}-config usr/include/ usr/lib/ usr/share/man/man3/"
+
+src_compile() {
+	cd ${B}
+	cygconf --enable-nls --with-libtool
+	cygmake LIBTOOL_OPTS="-no-undefined \$(LIBS)"
+	touch headers.sed
+}
