@@ -3,6 +3,8 @@ HOMEPAGE="http://invisible-island.net/dialog/"
 SRC_URI="ftp://invisible-island.net/dialog/${PN}-${PVP[0]}.${PVP[1]}-${PVP[2]}.tgz"
 SRC_DIR="${PN}-${PVP[0]}.${PVP[1]}-${PVP[2]}"
 
+PATCH_URI="20080316-vpath.patch"
+
 abi=6
 PKG_NAMES="${PN} lib${PN}${abi} lib${PN}-devel"
 PKG_HINTS="setup lib devel"
@@ -12,7 +14,7 @@ PKG_CONTENTS[2]="usr/bin/${PN}-config usr/include/ usr/lib/ usr/share/man/man3/"
 
 src_compile() {
 	cd ${B}
-	cygconf --enable-nls --with-libtool
+	cygconf --enable-nls --with-libtool --with-ncursesw
 	cygmake LIBTOOL_OPTS="-no-undefined \$(LIBS)"
 	touch headers.sed
 }
