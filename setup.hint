@@ -1,5 +1,0 @@
-category: Shells
-requires: libdialog6 libintl8 libncurses8
-sdesc: "Curses widgets script interpreter (executable)"
-ldesc: "A script-interpreter which provides a set of curses widgets. 
-Widgets are objects whose appearance and behavior can be customized."

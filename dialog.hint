@@ -1,6 +1,5 @@
-category: Shells
-requires: libintl8 libncurses8
-external-source: dialog
-sdesc: "Curses widgets script interpreter (runtime library)"
+category: Interpreters
+requires: libdialog10 libintl8 libncursesw10
+sdesc: "Curses widgets script interpreter (executable)"
 ldesc: "A script-interpreter which provides a set of curses widgets. 
 Widgets are objects whose appearance and behavior can be customized."

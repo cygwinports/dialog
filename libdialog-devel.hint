@@ -1,5 +1,5 @@
-category: Shells
-requires: gettext libncurses-devel
+category: Interpreters
+requires: libdialog10 gettext libncursesw-devel
 external-source: dialog
 sdesc: "Curses widgets script interpreter (development)"
 ldesc: "A script-interpreter which provides a set of curses widgets. 
