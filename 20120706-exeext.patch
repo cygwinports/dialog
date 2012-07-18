@@ -1,0 +1,13 @@
+PROG already contains $x (.exe)
+
+--- origsrc/dialog-1.1-20120706/makefile.in	2012-02-15 18:35:37.000000000 -0600
++++ src/dialog-1.1-20120706/makefile.in	2012-07-18 15:58:05.909505100 -0500
+@@ -181,7 +181,7 @@ $(LIB) : $(LIB_OBJECT)
+ 	$(LIBTOOL_CREATE) $(LIB) $(LIB_OBJECT)
+ 	$(RANLIB) $@
+ 
+-$(PROG)$x : $(LIB) dialog$o @INTLDIR_MAKE@ @INTLLIBS@
++$(PROG) : $(LIB) dialog$o @INTLDIR_MAKE@ @INTLLIBS@
+ 	$(LINK) -o $@ dialog$o -L. -l@PACKAGE@ $(LDFLAGS) $(LIBS)
+ 
+ clean	\
