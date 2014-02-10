@@ -1,0 +1,48 @@
+20140112 added support for building shared libraries without libtool
+(as in ncurses), but these new sections of make install are not relevant
+when building with libtool.
+
+--- origsrc/dialog-1.2-20140112/aclocal.m4	2013-11-19 18:23:35.000000000 -0600
++++ src/dialog-1.2-20140112/aclocal.m4	2014-02-09 19:21:51.321079500 -0600
+@@ -4886,6 +4886,8 @@ cat >>$1 <<CF_EOF
+ CF_EOF
+ fi
+ 
++if test "x$with_libtool" = xno
++then
+ cat >>$1 <<CF_EOF
+ 
+ install \\
+@@ -4929,6 +4931,10 @@ fi
+ 
+ cat >>$1 <<CF_EOF
+ 	-rm -f \$(DESTDIR)\$(libdir)/$cf_libname
++CF_EOF
++fi
++
++cat >>$1 <<CF_EOF
+ 
+ clean \\
+ clean.libs ::
+--- origsrc/dialog-1.2-20140112/configure	2013-09-22 09:26:48.000000000 -0500
++++ src/dialog-1.2-20140112/configure	2014-02-09 19:22:28.929230500 -0600
+@@ -16937,6 +16937,8 @@ cat >>makefile <<CF_EOF
+ CF_EOF
+ fi
+ 
++if test "x$with_libtool" = xno
++then
+ cat >>makefile <<CF_EOF
+ 
+ install \\
+@@ -16980,6 +16982,10 @@ fi
+ 
+ cat >>makefile <<CF_EOF
+ 	-rm -f \$(DESTDIR)\$(libdir)/$cf_libname
++CF_EOF
++fi
++
++cat >>makefile <<CF_EOF
+ 
+ clean \\
+ clean.libs ::

@@ -1,5 +1,5 @@
 NAME="dialog"
-VERSION=1.2-20130523
+VERSION=1.2-20140112
 RELEASE=1
 CATEGORY="Interpreters"
 SUMMARY="Curses widget-based script interpreter"
@@ -7,7 +7,10 @@ DESCRIPTION="A script-interpreter which provides a set of curses widgets.
 Widgets are objects whose appearance and behavior can be customized."
 HOMEPAGE="http://invisible-island.net/dialog/"
 SRC_URI="ftp://invisible-island.net/dialog/dialog-${VERSION}.tgz"
-PATCH_URI="20120706-exeext.patch"
+PATCH_URI="
+	20120706-exeext.patch
+	20140112-libtool-install.patch
+"
 
 PKG_NAMES="${NAME} lib${NAME}11 lib${NAME}-devel"
 dialog_CONTENTS="--exclude=man3 usr/bin/*.exe usr/share/"
@@ -21,7 +24,7 @@ src_compile() {
 	cd ${B}
 	cygconf --enable-nls --with-libtool --with-ncursesw
 	cygmake LIBTOOL_OPTS="-no-undefined -shared"
-	touch headers.sed
+#	touch headers.sed
 }
 
 KEEP_LA_FILES=none
