@@ -1,5 +1,5 @@
 NAME="dialog"
-VERSION=1.2-20140112
+VERSION=1.2-20150225
 RELEASE=1
 CATEGORY="Interpreters"
 SUMMARY="Curses widget-based script interpreter"
@@ -12,10 +12,10 @@ PATCH_URI="
 	20140112-libtool-install.patch
 "
 
-PKG_NAMES="${NAME} lib${NAME}11 lib${NAME}-devel"
+PKG_NAMES="${NAME} lib${NAME}12 lib${NAME}-devel"
 dialog_CONTENTS="--exclude=man3 usr/bin/*.exe usr/share/"
-libdialog11_SUMMARY="${SUMMARY} library (runtime)"
-libdialog11_CONTENTS="usr/bin/cygdialog-11.dll"
+libdialog12_SUMMARY="${SUMMARY} library (runtime)"
+libdialog12_CONTENTS="usr/bin/cygdialog-12.dll"
 libdialog_devel_SUMMARY="${SUMMARY} library (development)"
 libdialog_devel_REQUIRES="libncursesw-devel"
 libdialog_devel_CONTENTS="usr/bin/${PN}-config usr/include/ usr/lib/ usr/share/man/man3/"
