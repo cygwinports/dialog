@@ -1,6 +1,6 @@
 NAME="dialog"
 VERSION=1.2-20150225
-RELEASE=1
+RELEASE=2
 CATEGORY="Interpreters"
 SUMMARY="Curses widget-based script interpreter"
 DESCRIPTION="A script-interpreter which provides a set of curses widgets.
@@ -25,6 +25,17 @@ src_compile() {
 	cygconf --enable-nls --with-libtool --with-ncursesw
 	cygmake LIBTOOL_OPTS="-no-undefined -shared"
 #	touch headers.sed
+}
+
+src_install() {
+	cd ${B}
+	cyginstall
+
+	# keep the samples executable as needed, but drop samples/install
+	pushd ${S}
+	dodir /usr/share/doc/${NAME}
+	tar c --exclude=install samples | tar x -C ${D}/usr/share/doc/${NAME}
+	popd
 }
 
 KEEP_LA_FILES=none
