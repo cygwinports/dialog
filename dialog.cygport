@@ -1,21 +1,22 @@
 NAME="dialog"
-VERSION=1.2-20150225
-RELEASE=2
+VERSION=1.3
+RELEASE=1.20160424
 CATEGORY="Interpreters"
 SUMMARY="Curses widget-based script interpreter"
 DESCRIPTION="A script-interpreter which provides a set of curses widgets.
 Widgets are objects whose appearance and behavior can be customized."
 HOMEPAGE="http://invisible-island.net/dialog/"
-SRC_URI="ftp://invisible-island.net/dialog/dialog-${VERSION}.tgz"
+SRC_URI="ftp://invisible-island.net/dialog/dialog-${VERSION}-${RELEASE#*.}.tgz"
+SRC_DIR="dialog-${VERSION}-${RELEASE#*.}"
 PATCH_URI="
 	20120706-exeext.patch
 	20140112-libtool-install.patch
 "
 
-PKG_NAMES="${NAME} lib${NAME}12 lib${NAME}-devel"
+PKG_NAMES="${NAME} lib${NAME}13 lib${NAME}-devel"
 dialog_CONTENTS="--exclude=man3 usr/bin/*.exe usr/share/"
-libdialog12_SUMMARY="${SUMMARY} library (runtime)"
-libdialog12_CONTENTS="usr/bin/cygdialog-12.dll"
+libdialog13_SUMMARY="${SUMMARY} library (runtime)"
+libdialog13_CONTENTS="usr/bin/cygdialog-13.dll"
 libdialog_devel_SUMMARY="${SUMMARY} library (development)"
 libdialog_devel_REQUIRES="libncursesw-devel"
 libdialog_devel_CONTENTS="usr/bin/${PN}-config usr/include/ usr/lib/ usr/share/man/man3/"
