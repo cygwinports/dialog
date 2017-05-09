@@ -8,6 +8,6 @@ PROG already contains $x (.exe)
  
 -$(PROG)$x : $(LIB) dialog$o @INTLDIR_MAKE@ @INTLLIBS@
 +$(PROG) : $(LIB) dialog$o @INTLDIR_MAKE@ @INTLLIBS@
- 	$(LINK) -o $@ dialog$o -L. -l@PACKAGE@ $(LDFLAGS) $(LIBS)
+ 	$(LINK) -o $@ dialog$o -L. -l@PACKAGE@ $(CFLAGS) $(LDFLAGS) $(LIBS)
  
  clean	\
